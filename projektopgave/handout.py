@@ -22,3 +22,28 @@ punkter = indlaes_fra_fit()
 
 print(f"Der er indlæst {len(punkter)} punkter fra filen")
 print(punkter[300])
+
+## -----------------------------------------------------------------
+
+from geopy.distance import distance 
+
+# afstand mellem punkter
+
+# Ved at bruge enumarate får jeg både hvert element (`p`), og et index for hvert element (`i`), altid startende med 0 
+# Jeg itereret over listen `punkter[1:]` hvor første element er slicet væk
+#   inde i løkken henter jeg forrige punkt med index'et i 
+#     Da i starter på nul, for jeg hvert punkt fra 0 til nedstsidste,
+#     punktet p er hvert af punkterne fra andet til sidste
+
+for i, p in enumerate(punkter[1:]):
+    # previus point
+    pp = punkter[i]
+
+    dt = (p['timestamp'] - pp['timestamp']).seconds
+    dd = distance( (pp['latitude'], pp['longitude']), (p['latitude'], p['longitude'])).meters
+    v = dd/dt
+    print(f"p: {p}")
+    print(f"pp: {pp}")
+    print(f"dt: {dt}")
+    print(f"dd: {dd}")
+
