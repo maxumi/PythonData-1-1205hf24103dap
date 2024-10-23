@@ -15,7 +15,7 @@ import math
 
 def hypothenuse(a: float, b: float) -> float:
     """
-    Calculates the length of the hypotenuse of a right-angled triangle using the Pythagorean theorem.
+    Calculates the length of the hypotenuse of triangle
 
     Args:
         a (float): Length of the first side of the triangle.
@@ -29,11 +29,11 @@ def hypothenuse(a: float, b: float) -> float:
 
 def area(a: float, b: float) -> float:
     """
-    Calculates the area of a right-angled triangle.
+    Calculates the area of a triangle.
 
     Args:
-        a (float): Length of the first side of the triangle.
-        b (float): Length of the other side of the triangle.
+        a: Length of the first side of the triangle.
+        b: Length of the other side of the triangle.
 
     Returns:
         float: The area of the triangle.
